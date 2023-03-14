@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { PageRoutingModule } from './routing.module';
 import { DetailsComponent } from './details/details.component';
 import { ErrorComponent } from './error/error.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -11,7 +12,8 @@ import { ErrorComponent } from './error/error.component';
   declarations: [HomeComponent, DetailsComponent, ErrorComponent],
   imports: [
     CommonModule,
-    PageRoutingModule
+    PageRoutingModule,
+    SharedModule
   ]
 })
 export class PagesModule { }
