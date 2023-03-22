@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { error } from 'console';
 import { PokeApiService } from 'src/app/service/poke-api.service';
 
 @Component({
@@ -10,6 +11,7 @@ export class PokeListComponent implements OnInit {
 
   getListPokemon: any[] = [];
   private setListPokemon: any[] = [];
+  apiError: boolean = false;
 
   constructor(private pokeApi: PokeApiService) { }
 
@@ -22,6 +24,9 @@ export class PokeListComponent implements OnInit {
       res => {
         this.setListPokemon = res.results;
         this.getListPokemon = this.setListPokemon;
+      },
+      error => {
+        this.apiError = true;
       }
     )
   }
